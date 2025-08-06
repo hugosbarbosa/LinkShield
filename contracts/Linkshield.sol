@@ -9,7 +9,9 @@ contract LinkShield {
         uint256 fee;
 
 
-    }
+    }   
+    mapping(string => Link) private links;
+    mapping (string => mapping (address => bool) )public hasAccess;
 
     function addLink (string calldata url, string calldata linkId, uint256 fee) public {
 
@@ -19,7 +21,19 @@ contract LinkShield {
         link.url = url;
         link.owner = msg.sender;
         link.fee = fee;
+
+        links[linkId] = link;
+        hasAccess[linkId][msg.sender] = true;
     }
 
+    function getLink (string calldata linkId) public view returns (Link memory) {
+        Link memory link = links[linkId];
+
+        if (link.fee == 0) return link;
+        if(hasAccess [linkId] [msg.sender] == false) 
+        link.url ="";
+
+        return link;
+    }
 
 }
