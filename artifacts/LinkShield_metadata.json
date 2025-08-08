@@ -29,6 +29,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "commission",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -87,6 +100,19 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "linkId",
+						"type": "string"
+					}
+				],
+				"name": "payLink",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -117,11 +143,11 @@
 	},
 	"sources": {
 		"contracts/Linkshield.sol": {
-			"keccak256": "0x737b57a30b76971b7b5e9b8e2b2ac3ca9ef176f187ee7811f1c2bf3829d013fd",
+			"keccak256": "0xc2c6491aa9c0ad56bed5c874157a3c29190ccdbce099c305f8a735cd2d218a69",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://79a8d413836ee34e2ff9f7e55f7d3a1cf2813b3684c4299881e8fa42832b8303",
-				"dweb:/ipfs/Qme4RKc6QyC7zjiRjhT8WSSTDFknz5ETQVxw1rQPXqP6XQ"
+				"bzz-raw://0f4a07f2645a25eda1b7e37e017cd01d8cf1de00443a22125902c147c1cc844b",
+				"dweb:/ipfs/QmXLUAiZzhTSHg3vubYR87xy55qUk8TFGUSxzCPpqHy1CA"
 			]
 		}
 	},
