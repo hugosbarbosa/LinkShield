@@ -15,7 +15,12 @@ contract LinkShield {
     uint256 public commission = 1;
     mapping(string => Link) private links;
     mapping (string => mapping (address => bool) )public hasAccess;
+    address public immutable admin;
 
+    constructor() {
+
+        admin = msg.sender;
+    }
 
     function addLink (string calldata url, string calldata linkId, uint256 fee) public {
 
@@ -51,6 +56,14 @@ contract LinkShield {
         link.url ="";
 
         return link;
+    }
+
+    function withdraw () public  {
+    require(msg.sender == admin, "Only admin can withdraw funds!!");    
+       
+        uint256 amount = address(this).balance;
+        payable(admin).transfer(amount);
+        
     }
 
 }
